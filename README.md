@@ -45,13 +45,13 @@ El programa imprimirá una cadena de 81 caracteres con el Sudoku resuelto. Si el
 
 ### Algoritmo Backtracking (`resolverSudoku`)
 
-**Complejidad:** O(9^n), donde n es el número de casillas vacías.
-**Explicación:** El algoritmo explora un árbol de decisión donde cada nodo (casilla vacía) puede tener hasta 9 hijos. Aunque las reglas del Sudoku actúan como una función de poda que reduce de forma importante el espacio de búsqueda real, el peor caso teórico sigue siendo exponencial.
+* **Complejidad:** O(9^n), donde n es el número de casillas vacías.
+* **Explicación:** El algoritmo explora un árbol de decisión donde cada nodo (casilla vacía) puede tener hasta 9 hijos. Aunque las reglas del Sudoku actúan como una función de poda que reduce de forma importante el espacio de búsqueda real, el peor caso teórico sigue siendo exponencial.
 
 ### Función de Validación (`esValido`)
 
-**Complejidad:** O(1) (Constante).
-**Explicación:** Independientemente del estado del tablero, la función siempre realiza una cantidad fija de comprobaciones: revisa 9 celdas para la fila, 9 para la columna y 9 para el subcuadrante de 3x3 (un máximo de 27 iteraciones).
+* **Complejidad:** O(1) (Constante).
+* **Explicación:** Independientemente del estado del tablero, la función siempre realiza una cantidad fija de comprobaciones: revisa 9 celdas para la fila, 9 para la columna y 9 para el subcuadrante de 3x3 (un máximo de 27 iteraciones).
 
 ## Decisiones de Implementación
 
@@ -59,8 +59,8 @@ El programa imprimirá una cadena de 81 caracteres con el Sudoku resuelto. Si el
 
 Se decidió utilizar un **arreglo unidimensional** de 81 posiciones en lugar de una matriz bidimensional.
 
-**Ventaja:** Optimiza el uso de la memoria y mejora la velocidad de acceso por localidad de datos.
-**Simplificación:** Permite manejar el progreso del algoritmo con un solo índice `pos` que avanza de 0 a 80.
+* **Ventaja:** Optimiza el uso de la memoria y mejora la velocidad de acceso por localidad de datos.
+* **Simplificación:** Permite manejar el progreso del algoritmo con un solo índice `pos` que avanza de 0 a 80.
 
 ### 2. Aritmética para Validación de Subtablero
 
@@ -81,8 +81,8 @@ El algoritmo implementa **backtracking**. Si una rama de búsqueda no llega a un
 
 ### 4. Manejo de Errores
 
-**Validación de entrada:** Se incluyó un bloque de control en el `main` para detectar argumentos vacíos o de longitud incorrecta antes de iniciar el procesamiento.
-**Conversión de caracteres:** Se utiliza la resta de caracteres (`'x' - '0'`) para convertir de `Char` a `Int` de forma eficiente.
+* **Validación de entrada:** Se incluyó un bloque de control en el `main` para detectar argumentos vacíos o de longitud incorrecta antes de iniciar el procesamiento.
+* **Conversión de caracteres:** Se utiliza la resta de caracteres (`'x' - '0'`) para convertir de `Char` a `Int` de forma eficiente.
 
 ## Estrategias de Poda
 
