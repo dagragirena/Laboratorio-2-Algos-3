@@ -23,28 +23,28 @@ fun esValido(sudoku: IntArray, numero: Int, pos: Int): Boolean {
     val fila = pos / 9
     val col = pos - fila * 9
 
-    // Verificar si ya se encuentra el numero en la fila
+    // Verificar si ya se encuentra el número en la fila
     for (i in 9 * fila until 9 * (fila + 1)) {
-        if (sudoku[i] == numero && i != pos) return false
+        if (sudoku[i] == numero) return false
     }
-    // Verificar si ya se encuentra el numero en la columna
+    // Verificar si ya se encuentra el número en la columna
     for (j in 0 + col until 81 step 9) {
-        if (sudoku[j] == numero && j != pos) return false
+        if (sudoku[j] == numero) return false
     }
 
     val filaInicio = (fila / 3) * 3
     val colInicio = (col / 3) * 3
     val inicioSubtablero = filaInicio * 9 + colInicio
 
-    // Verificar si ya se encuentra el numero en el subtablero
+    // Verificar si ya se encuentra el número en el subtablero
     for (k in inicioSubtablero until inicioSubtablero+3) {
-        if (sudoku[k] == numero && k != pos) return false
+        if (sudoku[k] == numero) return false
     }
     for (k in inicioSubtablero+9 until inicioSubtablero+12) {
-        if (sudoku[k] == numero && k != pos) return false
+        if (sudoku[k] == numero) return false
     }
     for (k in inicioSubtablero+18 until inicioSubtablero+21) {
-        if (sudoku[k] == numero && k != pos) return false
+        if (sudoku[k] == numero) return false
     }
     return true
 }
@@ -52,6 +52,7 @@ fun esValido(sudoku: IntArray, numero: Int, pos: Int): Boolean {
 fun main(args: Array<String>) {
     if (args.isEmpty() || args[0].length != 81) {
         println("NOSOLUTION")
+        return
     }
 
     val entrada = args[0]
